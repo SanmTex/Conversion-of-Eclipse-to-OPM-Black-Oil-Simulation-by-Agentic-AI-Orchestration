@@ -1,0 +1,41 @@
+# Large binary simulation files — not committed
+# Obtain via data/README_DATA.md
+*.EGRID
+*.INIT
+*.UNRST
+*.DATA
+
+# OPM output directory
+output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Pretest folder — local test runs only, not part of the published workflow
+Pretest/
+
+# Word temporary lock files
+~$*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# The small Eclipse reference files ARE committed:
+!data/FIELD_X_001.UNSMRY
+!data/FIELD_X_001.SMSPEC

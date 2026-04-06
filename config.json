@@ -1,0 +1,10 @@
+{
+  "data_file":       "data/FIELD_X_001.DATA",
+  "eclipse_unsmry":  "data/FIELD_X_001.UNSMRY",
+  "eclipse_smspec":  "data/FIELD_X_001.SMSPEC",
+  "eclipse_egrid":   "",
+  "eclipse_unrst":   "",
+  "output_dir":      "output",
+  "omp_threads":     4,
+  "expected_active": 114768
+}
