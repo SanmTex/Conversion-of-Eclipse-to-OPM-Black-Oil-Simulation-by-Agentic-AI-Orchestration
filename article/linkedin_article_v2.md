@@ -255,7 +255,7 @@ judgement — not the end of it.
 
 ## Run it yourself
 
-The full workflow is available on GitHub: [link to repository]
+The full workflow is available on GitHub: https://github.com/SanmTex/Conversion-of-Eclipse-to-OPM-Black-Oil-Simulation-by-Agentic-AI-Orchestration
 
 Clone the repo, obtain the binary data files (instructions in `data/README_DATA.md`), set
 your config, and run `python agents/orchestrator.py`.  The README covers prerequisites,
