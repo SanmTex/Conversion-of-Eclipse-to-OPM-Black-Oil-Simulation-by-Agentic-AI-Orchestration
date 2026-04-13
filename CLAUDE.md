@@ -85,3 +85,42 @@ When a user opens this repository and types `claude`, follow these instructions:
 - **OPM Flow** installed in WSL:  `wsl flow --version` should succeed
 - **Python 3.9+** with packages in `requirements.txt`
 - **Data files** in `data/` — see `data/README_DATA.md` for download instructions
+
+---
+
+## Project status (updated 2026-04-13)
+
+The workflow is complete and published.  The following deliverables exist alongside the agents:
+
+| File | Description |
+|---|---|
+| `article/linkedin_article_v2.md` | Final LinkedIn article (Markdown) |
+| `article/linkedin_article_v2.docx` | Word version with 5 figures embedded |
+| `article/build_presentation.py` | Generates the SPE PPTX via python-pptx |
+| `article/OPM_Agentic_AI_SPE_Presentation.pptx` | 16-slide SPE technical presentation |
+| `output/figures/` | 5 article figures (copied from a Pretest run) |
+
+**Validation results on FIELD_X_001:**
+- 89% of output mnemonics match Eclipse at R² ≥ 0.99 (72 of 81)
+- Cell-level pressure residual σ ≈ 2 psia across 114,768 active cells and 61 timesteps
+- Cumulative MAPE: FOPT 1.5%, FWPT 1.3%, FGPT 0.5%
+- Total wall-clock time: 37 minutes on a standard laptop (35 min OPM, <2 min agents)
+- Non-passing: gas lift well rates (WGLIR) — VFP multi-stability between optimisers, not a physics error
+
+**Regenerating article deliverables:**
+Before regenerating `linkedin_article_v2.docx` or the PPTX, ensure the 5 figures
+are present in `output/figures/`.  If they are missing, copy them from `Pretest/output/figures/`:
+```bash
+cp Pretest/output/figures/{field_comparison_with_prediction,timeseries_1to1_scatter,metrics_visual,cell_error_distribution,agent_performance}.png output/figures/
+```
+Then run:
+```bash
+python article/build_presentation.py          # regenerate PPTX
+python article/build_linkedin_article_docx.py # regenerate Word doc (if script exists)
+```
+
+**Anonymisation map (original → published):**
+- BQC_APR09_P015_EXP → FIELD_X_001
+- Simulation dates shifted -8 years (1 Jul 2008 → 1 Jul 2000)
+- Well names: ADNH-3A→PROD-01, ADNH-4P→PROD-02, ADNH-5P→PROD-03, ADNH-8P2→PROD-04,
+  ADNH-8P3→PROD-05, ADNH-6I→INJ-01, ADNH-7I→INJ-02, BQC1E2→PROD-06, BQC2W2→PROD-07, BQC3W→PROD-08
