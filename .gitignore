@@ -32,6 +32,9 @@ Pretest/
 .DS_Store
 Thumbs.db
 
+# Claude Code local instructions — not for public repo
+CLAUDE.md
+
 # IDE
 .vscode/
 .idea/
